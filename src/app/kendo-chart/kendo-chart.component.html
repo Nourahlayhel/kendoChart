@@ -1,0 +1,15 @@
+<kendo-chart *ngIf="chartData" class="chart">
+  <kendo-chart-title [text]="chartText"></kendo-chart-title>
+  <kendo-chart-category-axis class="axis">
+    <kendo-chart-category-axis-item
+      [categories]="categories"
+    ></kendo-chart-category-axis-item>
+  </kendo-chart-category-axis>
+  <kendo-chart-series>
+    <kendo-chart-series-item
+      *ngFor="let series of chartData.series"
+      [type]="'bar'"
+      [data]="series.data"
+    ></kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>
